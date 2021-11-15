@@ -1,21 +1,13 @@
-//   Modal toggle 
+//   Modal toggle and background blur on click
 
 var modal = document.querySelector('.modal');
 var blur = document.getElementById('blur');
+
 function toggleModal(e) {
   modal.classList.toggle('active');
-  
-//  document.querySelectorAll('.editorial-card').style = "filter:blur(10px);";
   overlay.classList.toggle('active');
 }
-// function openModal() {
-//   modal.style = "display:flex;";
-// };
 
-// function closeModal() {
-//   modal.style = "display:none;";
-  // overlay.style = "filter:blur(1rem);";
-// };
 
 
 // debugging section 
