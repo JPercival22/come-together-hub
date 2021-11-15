@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Raleway:wght@400;500&display=swap");
 // color variables
+$core-neutral: #fff;
 $core-dark: #8c3921;
 $core-light: #fff8bd;
 $core-light_hover-state: #d3cd94;
@@ -10,6 +11,7 @@ $success: #006500;
 $fail: #ad0021;
 
 // buttons
+$primary-background: $core-neutral;
 $primary-core: $core-dark;
 $secondary-core: $core-light;
 $tertiary-core: $tertiary;
@@ -58,7 +60,7 @@ body {
 h1 {
   line-height: 27pt;
   color: $core-dark;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.07rem;
   font-family: "Raleway", sans-serif;
@@ -114,30 +116,136 @@ header nav #click {
   display: none;
 }
 
-// General component styles
-.editorial-card {
-  display: flex;
-  flex-direction: column;
-  .editorial-title_centered {
-    display: flex;
-    align-self: center;
-  }
-  .editorial-description_left-aligned {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .editorial-description_center-aligned {
-    ul {
-      margin-bottom: 1em;
-    }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1em;
-    margin-top: 0;
-  }
+
+.modal {
+  display: none;
 }
+
+.show-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  pointer-events: all;
+  z-index: 2000;
+  padding: 15px;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  top: 25%;
+  left: 4%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  max-width: 80%;
+}
+
+.show-modal .contact-modal-title {
+  color: #2c4465;
+  line-height: 26px;
+  letter-spacing: 4pt;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-variant-caps: all-petite-caps;
+}
+
+.show-modal .close-modal .close-icon {
+  color: #252525;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 30px;
+  height: auto;
+}
+
+.show-modal .close-modal .close-icon:hover {
+  -webkit-filter: contrast(0);
+  filter: contrast(0);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.show-modal ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.show-modal ul li {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.show-modal ul li .modal-icon {
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.show-modal ul li a {
+  line-height: 10px;
+}
+
+.show-modal ul li a:hover {
+  text-decoration: underline;
+}
+
+.show-modal ul li a span {
+  font-weight: 300;
+  color: #2c4465;
+  text-decoration: underline;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin: 0px;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.show-modal ul li a span:hover {
+  text-decoration: none;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
 
 .nav-container {
   background: $brand-color;
@@ -145,6 +253,7 @@ header nav #click {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  border-bottom: 1px solid #8c39212b;
   header {
     width: 100%;
     .logo {
@@ -152,10 +261,11 @@ header nav #click {
       justify-content: center;
       max-height: 45px;
       .logo-placeholder {
+        display: flex;
         .company-logo {
           display: flex;
           img {
-            width: 100%;
+            width: 50px;
             height: auto;
           }
         }
@@ -169,7 +279,7 @@ header nav #click {
 
 .nav-container header nav ul {
   position: absolute;
-  top: 55px;
+  top: 45px;
   left: -100%;
   width: 100%;
   height: 100vh;
@@ -178,7 +288,7 @@ header nav #click {
   justify-content: center;
   text-align: center;
   transition: $button-hover-state;
-  background: #396baf;
+  background: $secondary-core;
   text-transform: uppercase;
   z-index: 1100;
   li {
@@ -190,13 +300,30 @@ header nav #click {
     justify-content: center;
     flex-direction: column;
     a {
-      color: $core-light;
+      color: $core-dark;
       width: 100%;
       margin-left: -100%;
       &:hover {
         background: 0 0;
         color: #0ff;
       }
+    }
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $core-dark;
+    background-color: $core-neutral;
+    border: $button-border-settings;
+    border-radius: 5px;
+    transition: $button-hover-state;
+    &:hover{
+      background: $core-light_hover-state;
     }
   }
 }
@@ -225,7 +352,7 @@ header #click:checked ~ ul li a {
   }
 }
 
-.small-donation-section {
+.make-a-donation-section {
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -238,7 +365,7 @@ header #click:checked ~ ul li a {
     justify-content: center;
     height: 40px;
     width: 100%;
-    padding: 20px 150px;
+    padding: 20px 100px;
     margin-top: 0;
     margin-bottom: 1em;
     font-family: "Raleway";
@@ -251,6 +378,12 @@ header #click:checked ~ ul li a {
     border-radius: 5px;
     background: $core-light;
     transition: all 1s ease-in-out;
+    a {
+      color: $core-dark;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     &:hover {
       background-color: $core-light_hover-state;
     }
@@ -271,12 +404,25 @@ header #click:checked ~ ul li a {
   justify-content: center;
 }
 
-.featured {
+.research-qoute {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .left {
+  .qoute-text {
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    .signature {
+      display: flex;
+      justify-content: flex-end;
+      font-style: normal;
+    }
+  }
+}
+
+.editorial-card {
+  display: flex;
+  .card-grid_start {
+    display: flex;
+    flex-direction: column;
     .inner {
       .subtitle {
         text-transform: uppercase;
@@ -285,8 +431,7 @@ header #click:checked ~ ul li a {
         letter-spacing: 0.2em;
         font-size: 0.85em;
       }
-
-      .featured-title h2 {
+      .editorial-title {
         line-height: 27pt;
         color: $primary-core;
         font-size: 1.7rem;
@@ -294,7 +439,20 @@ header #click:checked ~ ul li a {
         font-variant-caps: all-petite-caps;
         letter-spacing: 0.3rem;
       }
-      .featured-desc {
+      .editorial-desc_alt {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1em;
+        .open-modal {
+          text-transform: capitalize;
+          color: $core-dark;
+          font-weight: 700;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+      .editorial-desc {
         display: flex;
         flex-direction: column;
         span.signature {
@@ -312,272 +470,54 @@ header #click:checked ~ ul li a {
   }
 }
 
-.skills {
-  background-image: url(/img/designing.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 1em;
-  .skills-container {
-    text-align: center;
-    ul li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: #fff;
-      padding: 0.5em;
-      border-radius: 5px;
-      margin-bottom: 2em;
-      .skill-title {
-        color: $primary-core;
-        font-size: 1.7rem;
-        font-weight: 500;
-        font-variant-caps: all-petite-caps;
-        letter-spacing: 0.3rem;
-        margin-top: 10px;
-        margin-bottom: 0;
-        line-height: 20pt;
-      }
-      p {
-        text-align: left;
-        padding: 0 5px;
-      }
-      .icon-container {
-        filter: hue-rotate(360deg);
-        margin-top: 20px;
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-.skills .skills-container ul li .one {
-  width: 50px;
-}
-
-.skills .skills-container ul li .two {
-  width: 50px;
-}
-
-.skills .skills-container ul li .three {
-  width: 80px;
-}
-
-.portfolio {
-  padding: 0 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio {
-  .portfolio-left .inner {
-    .subtitle {
-      line-height: 27pt;
-      color: $primary-core;
-      font-size: 1.7rem;
-      font-weight: 500;
-      font-variant-caps: all-petite-caps;
-      letter-spacing: 0.3rem;
-      text-align: center;
-    }
-    .featured-title {
-      font-size: 1.15rem;
-      font-weight: 300;
-      font-variant-caps: petite-caps;
-      letter-spacing: 3pt;
-      line-height: 24.3pt;
-    }
-  }
-  .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    img {
-      border: 1px solid black;
-      border-radius: 5px;
-    }
-    .case-study-button {
-      background-color: $primary-core;
-      width: 100%;
-      padding: 8px;
-      color: $core-light;
-      font-size: 17px;
-      border-radius: 5px;
-      border: $button-border-settings;
-      margin: 1em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: $button-hover-state;
-      box-shadow: 0 8px 13px -4px lightblue;
-      &:hover {
-        background: #618bc5;
-        color: $core-light;
-        border-color: $core-button-border;
-        box-shadow: 0 8px 13px -4px #0d4252c4;
-      }
-      .primary-button {
-        color: $core-light;
-        font-size: 1em;
-        text-transform: uppercase;
-        letter-spacing: 2pt;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-.research-qoute {
-  background: linear-gradient(#ffffff, #ffffffc9), url(img/uxWallpaper.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1em;
-  .qoute-text {
-    font-size: 1.1rem;
-    font-style: oblique;
-    letter-spacing: 1.2pt;
-    sub {
-      font-style: initial;
-      font-variant-caps: petite-caps;
-      font-size: 1rem;
-    }
-  }
-}
-
-.about {
-  background-color: #86aba7;
-  padding: 1em;
-  .about-container {
-    text-align: center;
-    ul {
-      display: grid;
-      grid-gap: 10px;
-      li {
-        background: #fff;
-        border-radius: 5px;
-        padding: 1em 1em 0 1em;
-        margin-bottom: 0.5em;
-        box-shadow: #00000087 0 20px 25px -5px, #0000000a 0 10px 10px -5px;
-        .icon-container {
-          height: 100px;
-          display: grid;
-          place-content: center;
-          margin: 0 auto;
-        }
-        .one {
-          width: 200px;
-          padding: 1em;
-          img {
-            width: 100px;
-            height: auto;
-          }
-        }
-        .two {
-          width: 50px;
-        }
-        .three {
-          width: 80px;
-        }
-        .about-title {
-          font-weight: 700;
-          text-align: center;
-          color: #000100;
-          text-transform: capitalize;
-        }
-        .featured-desc {
-          margin-bottom: 2em;
-        }
-        .icon-container svg {
-          width: 100%;
-        }
-        .experience-vector {
-          padding: 0;
-        }
-        .degree img {
-          width: 100px;
-          padding: 1em 0;
-        }
-        .deliverables-img svg {
-          width: 230px;
-        }
-      }
-    }
-  }
-}
-
-// contact page styles
+// contact form styles
 .contact-page-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  background: #3d3d3d12;
+  padding: 0;
+  margin-bottom: 30px;
+  width: 90vw;
   .contact-container {
-    background: #fff;
+    border: $button-border-settings;
+    border-radius: 5px;
     .contact-form {
-      border: 1px solid #000100;
-      border-radius: 5px;
-      background-color: #3d3d3d12;
-      padding: 0 10px;
-      .contact-form-title {
-        font-size: 1.6rem;
-        font-weight: 600;
-      }
-      p {
-        span {
-          font-weight: 600;
-          color: $tertiary;
-          text-decoration: underline;
-          cursor: pointer;
-          transition: $button-hover-state;
-          &:hover {
-            text-decoration: none;
-          }
+      display: flex;
+      .contact-form-container {
+        border-radius: 0;
+        .left {
+          background: #b5d9545c;
+          padding-top: 0.5em;
         }
-      }
-    }
-    .contact-form-container {
-      border-radius: 0 0 5px 5px;
-      margin-bottom: 10px;
-      .left {
-        background: #b5d9545c;
-        padding-top: 0.5em;
-      }
-      .input-area {
-        padding: 0.5em;
-        .submit-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          color: $core-light;
-          font-family: "Poppins";
-          font-size: 16px;
-          background-color: $brand-color;
-          cursor: pointer;
-          width: 100%;
-          height: 36px;
-          margin-bottom: 2em;
-          border-radius: 5px;
-          border: 1px solid $brand-color;
-          transition: all 0.5s ease-in-out;
-          box-shadow: 0 8px 13px -4px #252525;
-          &:hover {
-            background: $secondary-core;
-            color: $brand-color;
-            border-color: $brand-color;
+        .input-area {
+          padding: 0.5em;
+          .submit-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: $core-dark;
+            font-family: "Poppins";
+            font-size: 16px;
+            background-color: $brand-color;
+            cursor: pointer;
+            width: 100%;
+            height: 36px;
+            margin-bottom: 2em;
+            border-radius: 5px;
+            border: $button-border-settings;
+            transition: all 0.5s ease-in-out;
+            box-shadow: 0 8px 13px -4px #252525;
+            &:hover {
+              background: $core-light_hover-state;
+              color: $core-dark;
+              border-color: $core-dark;
+            }
           }
-        }
-        span {
-          display: flex;
+          span {
+            display: flex;
+          }
         }
       }
     }
@@ -627,96 +567,10 @@ header #click:checked ~ ul li a {
   }
 }
 
-.modal {
-  display: none;
-}
-
-.show-modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  pointer-events: all;
-  z-index: 2000;
-  padding: 15px;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  background: #fff;
-  border: 1px solid black;
-  border-radius: 5px;
-  top: 25%;
-  left: 4%;
-  transition: $button-hover-state;
-  max-width: 80%;
-  .contact-modal-title {
-    color: $brand-color;
-    line-height: 26px;
-    letter-spacing: 4pt;
-    font-size: 1.5rem;
-    font-weight: 500;
-    font-variant-caps: all-petite-caps;
-  }
-  .close-modal .close-icon {
-    color: #252525;
-    cursor: pointer;
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    width: 30px;
-    height: auto;
-    &:hover {
-      filter: contrast(0);
-      transition: $button-hover-state;
-    }
-  }
-  ul {
-    list-style: none;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    li {
-      padding: 10px 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      .modal-icon {
-        width: 30px;
-        height: auto;
-        margin-right: 5px;
-      }
-      a {
-        line-height: 10px;
-        &:hover {
-          text-decoration: underline;
-        }
-        span {
-          font-weight: 300;
-          color: $brand-color;
-          text-decoration: underline;
-          transition: all 0.5s ease-in-out;
-          margin: 0px;
-          font-size: 16px;
-          line-height: 40px;
-          &:hover {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-}
-
-.blur {
-  filter: blur(5px);
-}
-
 // thank you page styles
 .thank-you-section {
   padding: 10px;
-  background: url(img/thank-you-bkg.jpg);
+  background: url(img/come-together-logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -725,9 +579,9 @@ header #click:checked ~ ul li a {
     animation: thank-you-animation 3s;
     justify-content: center;
     .thank-you-message {
-      border: 1px solid $brand-color;
+      border: 1px solid $core-dark;
       border-radius: 8px;
-      background-color: $core-light;
+      background-color: $core-neutral;
       padding: 10px;
       display: flex;
       flex-direction: column;
@@ -737,7 +591,7 @@ header #click:checked ~ ul li a {
       width: 100%;
       h1 {
         line-height: 27pt;
-        color: $brand-color;
+        color: $core-dark;
         font-size: 1.7rem;
         font-weight: 500;
         font-variant-caps: all-petite-caps;
@@ -745,43 +599,31 @@ header #click:checked ~ ul li a {
         text-align: center;
       }
       p span {
-        color: #007bb6;
+        color: #030d8b;
         font-style: italic;
         font-size: 14px;
         font-weight: 500;
       }
       button {
+        a {
+          color: $core-dark;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 17px;
+        }
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $brand-color;
-        color: $core-light;
-        font-size: 17px;
-        text-transform: uppercase;
-        font-weight: 500;
-        border: 1px solid $brand-color;
+        background-color: $core-light;
+        border: 1px solid $core-dark;
         border-radius: 5px;
         margin: 1em;
         width: 100%;
         height: 30px;
-        transition: all 0.5s ease-in-out;
         box-shadow: 0 8px 13px -4px lightblue;
-        .primary-button {
-          background-color: $primary-core;
-          color: $core-light;
-          font-size: 17px;
-          border-radius: 5px;
-          border: $button-border-settings;
-          margin-right: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: $button-hover-state;
-          &:hover {
-            background: $primary-core;
-            color: $core-light;
-            border-color: $core-button-border;
-          }
+        transition: $button-hover-state;
+        &:hover {
+          background: $core-light_hover-state;
         }
       }
     }
@@ -801,13 +643,12 @@ header #click:checked ~ ul li a {
 
 footer {
   position: relative;
-  top: -1px;
   .footer-container {
     display: flex;
     flex-direction: column;
     .footer-details {
-      background: $primary-core;
-      color: $core-light;
+      background: $secondary-core;
+      color: $core-dark;
       text-align: left;
       display: flex;
       flex-direction: column;
@@ -829,15 +670,10 @@ footer {
           }
           .logo-name {
             font-size: 22px;
-            color: $core-light;
+            color: $core-dark;
             line-height: 11px;
             font-variant-caps: all-petite-caps;
             letter-spacing: 5pt;
-          }
-          .logo-title {
-            color: $core-light;
-            font-variant-caps: all-petite-caps;
-            letter-spacing: 1.6pt;
           }
         }
       }
@@ -848,7 +684,7 @@ footer {
         align-items: flex-start;
         padding-bottom: 15px;
         .mailto-link {
-          color: $core-light;
+          color: $core-dark;
           text-decoration: underline;
           text-decoration-color: $core-light;
           transition: $button-hover-state;
