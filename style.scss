@@ -18,7 +18,7 @@ $tertiary-core: $tertiary;
 $core-button-border: $primary-core;
 $button-border-settings: 1px solid $primary-core;
 $button-hover-state: all 0.5s ease-in-out;
-
+$image-border-settings: 1px solid gainsboro;
 //
 // Gradient system
 //
@@ -100,6 +100,8 @@ ul {
 img {
   width: 100%;
   height: auto;
+  border: $image-border-settings;
+  border-radius: 5px;
 }
 
 .success {
@@ -216,24 +218,28 @@ header nav #click {
 
 .nav-container {
   background: $brand-color;
-  height: 45px;
+  height: 70px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   border-bottom: 1px solid #8c39212b;
   header {
     width: 100%;
+    height: inherit;
     .logo {
       display: flex;
       justify-content: center;
-      max-height: 45px;
+      align-items: center;
+      height: 100%;
       .logo-placeholder {
         display: flex;
         .company-logo {
           display: flex;
           img {
-            width: 50px;
+            width: 80px;
             height: auto;
+            border: none;
           }
         }
       }
@@ -307,12 +313,11 @@ header #click:checked ~ ul li a {
 
 .menu-btn {
   svg {
-    display: flex;
-    width: 30px;
+    width: 35px;
     height: auto;
     position: absolute;
     right: 10px;
-    top: 8px;
+    top: 20px;
     path {
       fill: $core-dark;
     }
@@ -406,6 +411,17 @@ header #click:checked ~ ul li a {
         font-variant-caps: all-petite-caps;
         letter-spacing: 0.3rem;
       }
+      .multi-editorial-banners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        grid-gap: 1em;
+        img {
+          border: 1px solid gainsboro;
+          border-radius: 5px;
+        }
+      }
       .editorial-desc {
         display: flex;
         flex-direction: column;
@@ -429,7 +445,7 @@ header #click:checked ~ ul li a {
         span.tertiary-link {
           color: $core-dark;
           font-weight: 600;
-          max-width: calc(6*16px);
+          max-width: calc(6 * 16px);
           width: 100%;
           &:hover {
             text-decoration: underline;
@@ -639,6 +655,9 @@ footer {
             height: auto;
             margin-right: 9px;
             flex-direction: column;
+            .company-logo img {
+              border: none;
+            }
           }
           .logo-name {
             font-size: 22px;
@@ -706,9 +725,6 @@ footer {
   section {
     padding: 1em;
   }
-  .about .about-container ul li .icon-container {
-    height: inherit;
-  }
 
   .show-modal {
     left: 4%;
@@ -746,15 +762,6 @@ footer {
     margin: 0 1em;
   }
 
-  .hero-container .hero-text-content {
-    padding: 1em;
-  }
-  .featured:before {
-    left: 34px;
-    width: 100px;
-    height: 100px;
-  }
-
   .featured .left {
     margin: 0 1em;
   }
@@ -762,90 +769,6 @@ footer {
     width: 65%;
     height: auto;
     padding-bottom: 1em;
-  }
-
-  .skills {
-    padding: 2em 2em 0.5em 2em;
-    .skills-container ul li {
-      padding: 1em;
-      margin-top: 0.7em;
-      .icon-container {
-        margin-top: 2em;
-        img {
-          margin-bottom: 2em;
-        }
-        .brand-awareness {
-          width: 105px;
-          height: auto;
-        }
-      }
-    }
-  }
-
-  .portfolio {
-    .portfolio-container {
-      .portfolio-left {
-        margin: 15px;
-        .inner .featured-desc {
-          padding-bottom: 10px;
-        }
-      }
-      .right {
-        margin-bottom: 1em;
-        img {
-          width: 65%;
-          height: auto;
-        }
-        .case-study-button {
-          width: 65%;
-        }
-      }
-    }
-  }
-
-  .about {
-    margin-bottom: 0;
-    .about-container ul {
-      grid-gap: 20px;
-      li {
-        margin: 1em 0.8em;
-        padding: 1em;
-        .icon-container {
-          padding: 2em 0;
-          img {
-            width: 65%;
-            height: auto;
-            margin: 0 auto;
-          }
-          svg {
-            width: 85%;
-            height: auto;
-            margin: 0 auto;
-          }
-        }
-        .degree {
-          .degree-image {
-            width: 130%;
-            height: auto;
-            margin: 0 auto;
-          }
-        }
-        .deliverables-img svg {
-          width: 45vw;
-          height: auto;
-        }
-      }
-      .business-model {
-        .business-model-icon {
-          width: 80%;
-          padding: 2em;
-          img {
-            width: 70%;
-            height: auto;
-          }
-        }
-      }
-    }
   }
 
   /*contact page styles*/
@@ -960,11 +883,6 @@ footer {
     right: 2em;
   }
 
-  .hero-container .hero-title,
-  .hero-container .txt-rotate .wrap {
-    font-size: 1.5rem;
-  }
-
   .hero-container .hero-text-content .hero-button-container {
     flex-direction: row;
     justify-content: flex-start;
@@ -975,85 +893,6 @@ footer {
     .secondary-button {
       width: 20%;
       margin-top: 0;
-    }
-  }
-
-  .mobile-social-icon a {
-    padding: 1em;
-    display: flex;
-  }
-
-  .research-qoute .qoute-text {
-    font-size: 1rem;
-  }
-
-  .featured {
-    padding: 2em;
-    &:before {
-      top: 0;
-      left: 2em;
-      width: 150px;
-      height: 150px;
-    }
-    .left {
-      margin: 0;
-    }
-    .right {
-      padding-bottom: 2em;
-      margin-top: 2em;
-    }
-  }
-
-  .skills .skills-container ul li {
-    .icon-container {
-      margin: 2em auto;
-      img {
-        width: 90px;
-        margin: 0 auto;
-        height: auto;
-      }
-    }
-  }
-
-  .portfolio {
-    margin: 0;
-    .portfolio-container {
-      .right {
-        display: flex;
-        flex-direction: column;
-        img,
-        .case-study-button {
-          width: 50vw;
-        }
-      }
-    }
-  }
-
-  .about {
-    padding: 1.4em;
-    .about-container ul {
-      grid-gap: 0;
-      li {
-        margin-bottom: 1.5em;
-        padding: 1em;
-        .icon-container {
-          img,
-          .degree-image {
-            width: 12vw;
-            height: auto;
-          }
-        }
-        .deliverables-img {
-          svg {
-            width: 35vw;
-            height: auto;
-          }
-        }
-      }
-      .business-model .business-model-icon img {
-        width: 50%;
-        height: auto;
-      }
     }
   }
 

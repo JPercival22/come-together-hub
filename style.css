@@ -71,6 +71,8 @@ ul {
 img {
   width: 100%;
   height: auto;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
 }
 
 .success {
@@ -234,21 +236,23 @@ header nav #click {
 
 .nav-container {
   background: #fff8bd;
-  height: 45px;
+  height: 70px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-bottom: 1px solid #8c39212b;
 }
 
 .nav-container header {
   width: 100%;
+  height: inherit;
 }
 
 .nav-container header .logo {
@@ -258,7 +262,10 @@ header nav #click {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-height: 45px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
 }
 
 .nav-container header .logo .logo-placeholder {
@@ -274,8 +281,9 @@ header nav #click {
 }
 
 .nav-container header .logo .logo-placeholder .company-logo img {
-  width: 50px;
+  width: 80px;
   height: auto;
+  border: none;
 }
 
 .nav-container header .logo .logo-container {
@@ -373,14 +381,11 @@ header #click:checked ~ ul li a {
 }
 
 .menu-btn svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 30px;
+  width: 35px;
   height: auto;
   position: absolute;
   right: 10px;
-  top: 8px;
+  top: 20px;
 }
 
 .menu-btn svg path {
@@ -524,6 +529,28 @@ header #click:checked ~ ul li a {
   letter-spacing: 0.3rem;
 }
 
+.editorial-card .card-grid_start .inner .multi-editorial-banners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  grid-gap: 1em;
+}
+
+.editorial-card .card-grid_start .inner .multi-editorial-banners img {
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+
 .editorial-card .card-grid_start .inner .editorial-desc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -563,7 +590,7 @@ header #click:checked ~ ul li a {
 .editorial-card .card-grid_start .inner .editorial-desc_alt span.tertiary-link {
   color: #8c3921;
   font-weight: 600;
-  max-width: calc(6*16px);
+  max-width: calc(6 * 16px);
   width: 100%;
 }
 
@@ -909,6 +936,10 @@ footer .footer-container .footer-details .footer-top-bar .logo .logo-placeholder
           flex-direction: column;
 }
 
+footer .footer-container .footer-details .footer-top-bar .logo .logo-placeholder .company-logo img {
+  border: none;
+}
+
 footer .footer-container .footer-details .footer-top-bar .logo .logo-name {
   font-size: 22px;
   color: #8c3921;
@@ -996,9 +1027,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   section {
     padding: 1em;
   }
-  .about .about-container ul li .icon-container {
-    height: inherit;
-  }
   .show-modal {
     left: 4%;
     max-width: 84%;
@@ -1028,14 +1056,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .research-qoute {
     margin: 0 1em;
   }
-  .hero-container .hero-text-content {
-    padding: 1em;
-  }
-  .featured:before {
-    left: 34px;
-    width: 100px;
-    height: 100px;
-  }
   .featured .left {
     margin: 0 1em;
   }
@@ -1043,79 +1063,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
     width: 65%;
     height: auto;
     padding-bottom: 1em;
-  }
-  .skills {
-    padding: 2em 2em 0.5em 2em;
-  }
-  .skills .skills-container ul li {
-    padding: 1em;
-    margin-top: 0.7em;
-  }
-  .skills .skills-container ul li .icon-container {
-    margin-top: 2em;
-  }
-  .skills .skills-container ul li .icon-container img {
-    margin-bottom: 2em;
-  }
-  .skills .skills-container ul li .icon-container .brand-awareness {
-    width: 105px;
-    height: auto;
-  }
-  .portfolio .portfolio-container .portfolio-left {
-    margin: 15px;
-  }
-  .portfolio .portfolio-container .portfolio-left .inner .featured-desc {
-    padding-bottom: 10px;
-  }
-  .portfolio .portfolio-container .right {
-    margin-bottom: 1em;
-  }
-  .portfolio .portfolio-container .right img {
-    width: 65%;
-    height: auto;
-  }
-  .portfolio .portfolio-container .right .case-study-button {
-    width: 65%;
-  }
-  .about {
-    margin-bottom: 0;
-  }
-  .about .about-container ul {
-    grid-gap: 20px;
-  }
-  .about .about-container ul li {
-    margin: 1em 0.8em;
-    padding: 1em;
-  }
-  .about .about-container ul li .icon-container {
-    padding: 2em 0;
-  }
-  .about .about-container ul li .icon-container img {
-    width: 65%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .about .about-container ul li .icon-container svg {
-    width: 85%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .about .about-container ul li .degree .degree-image {
-    width: 130%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .about .about-container ul li .deliverables-img svg {
-    width: 45vw;
-    height: auto;
-  }
-  .about .about-container ul .business-model .business-model-icon {
-    width: 80%;
-    padding: 2em;
-  }
-  .about .about-container ul .business-model .business-model-icon img {
-    width: 70%;
-    height: auto;
   }
   /*contact page styles*/
   .contact-page-section {
@@ -1239,10 +1186,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .menu-btn svg {
     right: 2em;
   }
-  .hero-container .hero-title,
-  .hero-container .txt-rotate .wrap {
-    font-size: 1.5rem;
-  }
   .hero-container .hero-text-content .hero-button-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1259,78 +1202,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .hero-container .hero-text-content .hero-button-container .secondary-button {
     width: 20%;
     margin-top: 0;
-  }
-  .mobile-social-icon a {
-    padding: 1em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .research-qoute .qoute-text {
-    font-size: 1rem;
-  }
-  .featured {
-    padding: 2em;
-  }
-  .featured:before {
-    top: 0;
-    left: 2em;
-    width: 150px;
-    height: 150px;
-  }
-  .featured .left {
-    margin: 0;
-  }
-  .featured .right {
-    padding-bottom: 2em;
-    margin-top: 2em;
-  }
-  .skills .skills-container ul li .icon-container {
-    margin: 2em auto;
-  }
-  .skills .skills-container ul li .icon-container img {
-    width: 90px;
-    margin: 0 auto;
-    height: auto;
-  }
-  .portfolio {
-    margin: 0;
-  }
-  .portfolio .portfolio-container .right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .portfolio .portfolio-container .right img,
-  .portfolio .portfolio-container .right .case-study-button {
-    width: 50vw;
-  }
-  .about {
-    padding: 1.4em;
-  }
-  .about .about-container ul {
-    grid-gap: 0;
-  }
-  .about .about-container ul li {
-    margin-bottom: 1.5em;
-    padding: 1em;
-  }
-  .about .about-container ul li .icon-container img,
-  .about .about-container ul li .icon-container .degree-image {
-    width: 12vw;
-    height: auto;
-  }
-  .about .about-container ul li .deliverables-img svg {
-    width: 35vw;
-    height: auto;
-  }
-  .about .about-container ul .business-model .business-model-icon img {
-    width: 50%;
-    height: auto;
   }
   .contact-page-section {
     padding: 2.5em;
