@@ -216,10 +216,10 @@
             <h1>Events</h1>
           </div>
           <div class="multi-editorial-banners">
-            <img src="/img/christmas-party-event.svg" alt="christmas hamper donation banner">
-            <img src="/img/christmas-hamper.svg" alt="christmas hamper donation banner">
-            <img src="/img/workshop.svg" alt="regular charity event banner">
-            <img src="/img/events.svg" alt="promotional event banner">
+            <img class="item" src="/img/christmas-party-event.svg" alt="christmas hamper donation banner">
+            <img class="item" src="/img/christmas-hamper.svg" alt="christmas hamper donation banner">
+            <img class="item" src="/img/workshop.svg" alt="regular charity event banner">
+            <img class="item" src="/img/events.svg" alt="promotional event banner">
           </div>
         </div>
       </div>
@@ -247,69 +247,66 @@
               and one of the team will contact you shortly.
             </p>
           </div>
+          <p class="editorial-desc_alt">
+            If you would like to join our team or make an perhaps make an item donation, please feel free to fill out
+            the form below and one of the team will contact you shortly to help you.
+            Alternatively, you can also click this to instantly <span class="tertiary-link"
+              onClick="toggleModal()">contact us.</span>
+            <span class="signature">- Thankyou.</span>
         </div>
       </div>
     </section>
 
-    <section class="editorial-card">
-      <div class="card-grid_start">
-        <div class="inner">
-          <h2 class="editorial-title">Contact Form</h2>
-          <p class="editorial-desc_alt">
-            If you would like to join our team or make an perhaps make an item donation, please feel free to fill out
-            the form below and one of the team will contact you shortly to help you.
-            Alternatively, you can also click this to instantly <span class="tertiary-link" onClick="toggleModal()">contact us</span>  - Thankyou.
-          </p>
-        </div>
-        <section id="contact-page" class="contact-page-section">
-          <div class="contact-container">
-            <!-- contact form  -->
-            <div class="contact-form">
-              <div class="contact-form-container">
-                <div class="left">
-                  <form action="https://formsubmit.co/joseph.m.percival@gmail.com" method="POST">
-                    <!-- subject send to my email  -->
-                    <input type="hidden" name="_subject" value="New Email From Portfolio">
-                    <!-- page forwards to thank you page after submission  -->
-                    <input type="hidden" name="_next" value="/pages/thank-you.html">
-                    <div class="input-area w50">
-                      <label>
-                        <!-- customers name section  -->
-                        <input type="text" name="name" class="first-child" placeholder="First Name"
-                          title="Please enter your first name here" required />
-                      </label>
-                    </div>
 
-                    <div class="input-area w50">
-                      <label>
-                        <input type="text" class="second-child" name="surname" placeholder="Last Name"
-                          title="Please enter your last name here" required />
-                      </label>
-                    </div>
-                    <div class="input-area w50">
-                      <label>
-                        <!-- required email section -->
-                        <input type="email" class="third-child" name="email" placeholder="Your Email"
-                          title="e.g yourname@gmail.com" required />
-                      </label>
-                    </div>
-                    <div class="input-area w100">
-                      <label>
-                        <!-- customer description  -->
-                        <textarea class="text-field" name="description" cols="40" rows="3"
-                          placeholder="Write your message here" title="Please leave a quick message here"
-                          required></textarea>
-                      </label>
-                    </div>
-                    <div class="input-area w100">
-                      <input class="submit-button" type="submit" value="send" />
-                    </div>
-                  </form>
+    <section id="contact-page" class="contact-page-section">
+      <div class="contact-container">
+      
+        <!-- contact form  -->
+        <div class="contact-form">
+          <h2>Contact Us</h2>
+          <div class="contact-form-container">
+            <div class="left">
+              <form action="https://formsubmit.co/joseph.m.percival@gmail.com" method="POST">
+                <!-- subject send to my email  -->
+                <input type="hidden" name="_subject" value="New Email From Portfolio">
+                <!-- page forwards to thank you page after submission  -->
+                <input type="hidden" name="_next" value="/pages/thank-you.html">
+                <div class="input-area w50">
+                  <label>
+                    <!-- customers name section  -->
+                    <input type="text" name="name" class="first-child" placeholder="First Name"
+                      title="Please enter your first name here" required />
+                  </label>
                 </div>
-              </div>
+
+                <div class="input-area w50">
+                  <label>
+                    <input type="text" class="second-child" name="surname" placeholder="Last Name"
+                      title="Please enter your last name here" required />
+                  </label>
+                </div>
+                <div class="input-area w50">
+                  <label>
+                    <!-- required email section -->
+                    <input type="email" class="third-child" name="email" placeholder="Your Email"
+                      title="e.g yourname@gmail.com" required />
+                  </label>
+                </div>
+                <div class="input-area w100">
+                  <label>
+                    <!-- customer description  -->
+                    <textarea class="text-field" name="description" cols="40" rows="3"
+                      placeholder="Write your message here" title="Please leave a quick message here"
+                      required></textarea>
+                  </label>
+                </div>
+                <div class="input-area w100">
+                  <input class="submit-button" type="submit" value="send" />
+                </div>
+              </form>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </section>
 
@@ -320,11 +317,12 @@
             <a class="logo" href="/index.html">
               <div class="logo-placeholder">
                 <div class="company-logo" alt="company logo">
-                  <img src="/img/brand-logo.svg" alt="">
+                  <img src="/img/brand-logo_sm.svg" alt="">
                 </div>
               </div>
               <div class="logo-container">
-                <div class="logo-name">COME TOGETHER HUB</div>
+                <div class="logo-title">Come together hub</div>
+                <div class="logo-subtitle">Making a better future for everyone</div>
               </div>
             </a>
           </div>
@@ -332,8 +330,10 @@
           <div class="logo-container">
             <a class="mailto-link" href="/contact-form.html"
               title="Click here to send an email">Matty@cometogetherhub.com</a>
-            <a class="mailto-link" href="tel:0788007229" title="This will call my mobile device">Mat: 0788007229</a>
-            <a class="mailto-link" href="tel:0788007229" title="This will call my mobile device">Carl: 0788007229</a>
+            <a href="tel:0788007229" title="This will call my mobile device">Mat: <span
+                class="mailto-link">0788007229</span></a>
+            <a href="tel:0788007229" title="This will call my mobile device">Carl: <span
+                class="mailto-link">0788007229</span></a>
           </div>
         </div>
         <!-- start of the social links in the sub footer  -->
