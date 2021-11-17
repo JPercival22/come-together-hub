@@ -484,9 +484,11 @@ header #click:checked ~ ul li a {
     .contact-form {
       display: flex;
       flex-direction: column;
-      padding: 0.5em;
       border: $button-border-settings;
       border-radius: 5px;
+      .form-title {
+        margin-left: 0.5rem;
+      }
       .contact-form-container {
         border-radius: 0;
         .left {
@@ -933,6 +935,64 @@ footer {
 
 //Styles for Laptops
 @media only screen and (min-width: 1050px) {
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: $secondary-core;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      background: $brand-color;
+      .logo {
+        padding-left: 2.5em;
+        .logo-placeholder {
+          padding: 0;
+        }
+        .logo-container {
+          flex-direction: column;
+          margin-left: 20px;
+          .logo-name {
+            line-height: 20px;
+            font-variant-caps: all-petite-caps;
+          }
+        }
+      }
+      nav {
+        max-height: 60px;
+        height: 100%;
+        ul {
+          position: revert;
+          flex-direction: row;
+          background: transparent;
+          height: 60px;
+          li {
+            font-size: 14px;
+            align-items: self-end;
+            justify-content: space-evenly;
+            a {
+              width: 145px;
+              padding: 0 10px;
+              transition: 1s all;
+              &:hover {
+                color: #ad0021;
+              }
+            }
+            .primary-button {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-btn svg {
+    display: none;
+  }
+
   .research-qoute {
     margin: 0 3em;
     padding-bottom: 2.5em;
@@ -972,61 +1032,7 @@ footer {
 }
 
 @media only screen and (min-width: 1250px) {
-  .nav-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background: $secondary-core;
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 60px;
-      background: $brand-color;
-      .logo {
-        padding-left: 2.5em;
-        .logo-placeholder {
-          padding: 0;
-        }
-        .logo-container {
-          flex-direction: column;
-          margin-left: 20px;
-          .logo-name {
-            line-height: 20px;
-            font-variant-caps: all-petite-caps;
-          }
-        }
-      }
-      nav {
-        max-height: 60px;
-        height: 100%;
-        ul {
-          position: revert;
-          flex-direction: row;
-          background: transparent;
-          height: 60px;
-          li {
-            font-size: 18px;
-            width: 26%;
-            a {
-              padding: 0 10px;
-              transition: 1s all;
-              &:hover {
-                color: cyan;
-              }
-            }
-            .primary-button {
-              display: none;
-            }
-          }
-        }
-      }
-    }
-  }
 
-  .menu-btn svg {
-    display: none;
-  }
 
   // index hero
   .hero-container {

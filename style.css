@@ -648,9 +648,12 @@ header #click:checked ~ ul li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.5em;
   border: 1px solid #8c3921;
   border-radius: 5px;
+}
+
+.contact-page-section .contact-container .contact-form .form-title {
+  margin-left: 0.5rem;
 }
 
 .contact-page-section .contact-container .contact-form .contact-form-container {
@@ -1229,40 +1232,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
 }
 
 @media only screen and (min-width: 1050px) {
-  .research-qoute {
-    margin: 0 3em;
-    padding-bottom: 2.5em;
-  }
-  .make-a-donation-section .container {
-    padding: 0.9em;
-  }
-  .editorial-card .card-grid_start .inner img {
-    max-width: 465px;
-    max-height: 465px;
-  }
-  .contact-page-section {
-    padding: 4em;
-  }
-  .contact-page-section .show-modal {
-    top: 40%;
-    left: 30%;
-    width: 39vw;
-    height: auto;
-  }
-  .thank-you-section {
-    padding: 0.5em;
-  }
-  footer .footer-container .footer-details {
-    padding: 4em;
-  }
-  .footer-social-icon a:hover {
-    opacity: 0.5;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-}
-
-@media only screen and (min-width: 1250px) {
   .nav-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1318,16 +1287,22 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
     height: 60px;
   }
   .nav-container header nav ul li {
-    font-size: 18px;
-    width: 26%;
+    font-size: 14px;
+    -webkit-box-align: self-end;
+        -ms-flex-align: self-end;
+            align-items: self-end;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .nav-container header nav ul li a {
+    width: 145px;
     padding: 0 10px;
     -webkit-transition: 1s all;
     transition: 1s all;
   }
   .nav-container header nav ul li a:hover {
-    color: cyan;
+    color: #ad0021;
   }
   .nav-container header nav ul li .primary-button {
     display: none;
@@ -1335,6 +1310,40 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .menu-btn svg {
     display: none;
   }
+  .research-qoute {
+    margin: 0 3em;
+    padding-bottom: 2.5em;
+  }
+  .make-a-donation-section .container {
+    padding: 0.9em;
+  }
+  .editorial-card .card-grid_start .inner img {
+    max-width: 465px;
+    max-height: 465px;
+  }
+  .contact-page-section {
+    padding: 4em;
+  }
+  .contact-page-section .show-modal {
+    top: 40%;
+    left: 30%;
+    width: 39vw;
+    height: auto;
+  }
+  .thank-you-section {
+    padding: 0.5em;
+  }
+  footer .footer-container .footer-details {
+    padding: 4em;
+  }
+  .footer-social-icon a:hover {
+    opacity: 0.5;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
   .hero-container {
     height: 88vh;
     display: -ms-grid;
