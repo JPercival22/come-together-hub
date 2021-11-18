@@ -371,6 +371,7 @@ header #click:checked ~ ul li a {
   background-size: cover;
   width: 100vw;
   height: 30vh;
+  filter: hue-rotate(338deg);
   .hero-donation {
     display: none;
   }
@@ -590,6 +591,7 @@ header #click:checked ~ ul li a {
         margin-left: 0.5rem;
       }
       .contact-form-container {
+        border-top: $button-border-settings;
         border-radius: 0;
         .left {
           background: #b5d9545c;
@@ -908,28 +910,6 @@ footer {
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area .submit-button {
     width: 54vw;
   }
-
-  //   // thank you page styles
-  //   .thank-you-section {
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     background: url(img/thank-you-bkg.jpg);
-  //     background-size: contain;
-  //     background-repeat: no-repeat;
-  //     background-position: center;
-  //     .thank-you-container {
-  //       padding: 0;
-  //       .thank-you-message {
-  //         max-width: 415px;
-  //         margin: 2em;
-  //       }
-  //     }
-  //   }
-
-  //   footer .footer-container .footer-details {
-  //     padding: 2em;
-  //   }
 }
 
 // Styles for tablets and small laptops
@@ -975,19 +955,13 @@ footer {
     padding: 2.5em;
   }
 
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
   .editorial-card .card-grid_start .inner .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
-    // padding: 5em;
-    margin: 1em;
-    // background: #ccc;
+    max-width: 730px;
+    width: 100%;
+    margin: 2em;
     .thumbnail-item {
       border: $button-border-settings;
       border-radius: 5px;
@@ -1020,6 +994,10 @@ footer {
       }
       &:hover {
         text-decoration: underline;
+        color: $core-dark;
+      }
+      &:hover {
+        filter: brightness(69%);
       }
     }
   }
@@ -1040,8 +1018,9 @@ footer {
     .events-lightbox__content {
       position: relative;
       width: 75%;
+      height: 95%;
       background: black;
-      padding: 1em;
+      padding: 2em;
       .events-lightbox__title {
         font-weight: 500;
       }
@@ -1059,8 +1038,11 @@ footer {
           justify-self: center;
         }
       }
-      img {
-        margin: 0 auto;
+      .item {
+        img {
+          width: 100%;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -1069,28 +1051,12 @@ footer {
     display: flex;
   }
 
-  // .editorial-card .card-grid_start .inner .multi-editorial-banners {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   justify-content: space-evenly;
-  //   flex-direction: row;
-  //   grid-gap: 2em;
-  //   cursor: zoom-in;
-  //   .item {
-  //     max-height: 350px;
-  //     height: 100%;
-  //     width: auto;
-  //     border: $button-border-settings;
-  //     border-radius: 5px;
-  //     transition: all 1s ease-in-out;
-  //     cursor: zoom;
-  //     &:hover {
-  //       opacity:0.5;
-  //     }
-  //   }
-  // }
-
-  // contact page styles
+  // contact section styles
+  .show-modal {
+    top: 34%;
+    left: 29.5%;
+    width: 38vw;
+  }
 
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .first-child,
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .second-child,
@@ -1101,21 +1067,19 @@ footer {
     height: auto;
   }
 
-  .contact-page-section .contact-container .contact-form .contact-form-container .left .w100 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .submit-button {
-      width: 20vw;
-      margin-top: 2em;
-      margin-bottom: 1em;
+  .contact-page-section .contact-container .contact-form .contact-form-container {
+    border-top: 1px solid $core-dark;
+    .left .w100 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .submit-button {
+        width: 20vw;
+        margin-top: 2em;
+        margin-bottom: 1em;
+      }
     }
-  }
-  .show-modal {
-    top: 34%;
-    left: 29.5%;
-    width: 38vw;
   }
 
   // Thank you styles
@@ -1259,7 +1223,7 @@ footer {
   }
   // index hero
   .hero-container {
-    height: 90vh;
+    
     width: auto;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -1335,8 +1299,8 @@ footer {
   }
 
   .hero-container {
-    .hero-text-content {
-      padding: 8em 2em 0em 9em;
+    .hero-donation {
+      margin-left: 10em;
     }
   }
 

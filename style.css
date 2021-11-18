@@ -461,6 +461,8 @@ header #click:checked ~ ul li a {
   background-size: cover;
   width: 100vw;
   height: 30vh;
+  -webkit-filter: hue-rotate(338deg);
+          filter: hue-rotate(338deg);
 }
 
 .hero-container .hero-donation {
@@ -795,6 +797,7 @@ header #click:checked ~ ul li a {
 }
 
 .contact-page-section .contact-container .contact-form .contact-form-container {
+  border-top: 1px solid #8c3921;
   border-radius: 0;
 }
 
@@ -1308,19 +1311,15 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .editorial-card > .card-grid-start {
     padding: 2.5em;
   }
-  *,
-  *::before,
-  *::after {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
   .editorial-card .card-grid_start .inner .gallery {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
-    margin: 1em;
+    max-width: 730px;
+    width: 100%;
+    margin: 2em;
   }
   .editorial-card .card-grid_start .inner .gallery .thumbnail-item {
     border: 1px solid #8c3921;
@@ -1356,6 +1355,11 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   }
   .editorial-card .card-grid_start .inner .gallery .thumbnail-item:hover {
     text-decoration: underline;
+    color: #8c3921;
+  }
+  .editorial-card .card-grid_start .inner .gallery .thumbnail-item:hover {
+    -webkit-filter: brightness(69%);
+            filter: brightness(69%);
   }
   .events-lightbox {
     position: fixed;
@@ -1381,8 +1385,9 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .events-lightbox .events-lightbox__content {
     position: relative;
     width: 75%;
+    height: 95%;
     background: black;
-    padding: 1em;
+    padding: 2em;
   }
   .events-lightbox .events-lightbox__content .events-lightbox__title {
     font-weight: 500;
@@ -1404,13 +1409,19 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
         align-self: center;
     justify-self: center;
   }
-  .events-lightbox .events-lightbox__content img {
+  .events-lightbox .events-lightbox__content .item img {
+    width: 100%;
     margin: 0 auto;
   }
   .events-lightbox:target {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .show-modal {
+    top: 34%;
+    left: 29.5%;
+    width: 38vw;
   }
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .first-child,
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .second-child,
@@ -1419,6 +1430,9 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
     padding: 9px 8px;
     width: 36vw;
     height: auto;
+  }
+  .contact-page-section .contact-container .contact-form .contact-form-container {
+    border-top: 1px solid #8c3921;
   }
   .contact-page-section .contact-container .contact-form .contact-form-container .left .w100 {
     display: -webkit-box;
@@ -1439,11 +1453,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
     width: 20vw;
     margin-top: 2em;
     margin-bottom: 1em;
-  }
-  .show-modal {
-    top: 34%;
-    left: 29.5%;
-    width: 38vw;
   }
   .thank-you-section {
     padding: 0.5em;
@@ -1591,7 +1600,6 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
     display: none;
   }
   .hero-container {
-    height: 90vh;
     width: auto;
     display: -ms-grid;
     display: grid;
@@ -1664,8 +1672,8 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .nav-container header nav ul {
     margin-right: 10em;
   }
-  .hero-container .hero-text-content {
-    padding: 8em 2em 0em 9em;
+  .hero-container .hero-donation {
+    margin-left: 10em;
   }
   .editorial-card {
     margin: 0 6.5em;
