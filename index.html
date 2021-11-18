@@ -22,7 +22,7 @@
     <div class="modal active">
       <div class="contact-modal-title">My Contact Details</div>
       <div class="close-modal" onClick="toggleModal()">
-        <svg class="close-icon" viewBox="0 0 24 24">
+        <svg class="close-icon">
           <path fill="#8c3921"
             d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
         </svg>
@@ -33,7 +33,7 @@
       <ul>
         <li>
           <span>
-            <svg class="modal-icon" viewBox="0 0 24 24">
+            <svg class="modal-icon">
               <path fill="#8c3921"
                 d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z" />
             </svg>
@@ -43,7 +43,7 @@
         </li>
         <li>
           <span>
-            <svg class="modal-icon" viewBox="0 0 24 24">
+            <svg class="modal-icon">
               <path fill="#8c3921"
                 d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z" />
             </svg>
@@ -53,6 +53,8 @@
       </ul>
     </div>
   </div>
+
+
   <div id="overlay">
     <div class="nav-container">
       <header>
@@ -114,6 +116,30 @@
     </div>
 
     <section class="hero-container">
+      <div id="makeADonation" class="hero-donation">
+        <div class="container">
+          <div class="small-header">
+            <h1>
+              Donate this winter to help the homeless or families facing homelessness.
+            </h1>
+          </div>
+          <div class="editorial">
+            <p>A small donation will help the most vulnerable this winter from the harshest of weather. You may want to
+              donate items or cash. </p>
+            <p>£10 will help to provide clothes to the homeless.</p>
+          </div>
+          <div class="slider-section"></div>
+          <button type="button" class="primary-button">
+            <a
+              href="https://www.gofundme.com/f/lets-come-together-for-our-community?utm_campaign=p_cf+share-flow-1&utm_medium=copy_link&utm_source=customer">
+              Donate Cash
+            </a>
+          </button>
+          <button type="button" class="primary-button">
+            <a href="#contactUs">Donate Item</a>
+          </button>
+        </div>
+      </div>
     </section>
 
     <section class="research-qoute">
@@ -215,11 +241,72 @@
           <div class="editorial-title">
             <h1>Events</h1>
           </div>
-          <div class="multi-editorial-banners">
-            <img class="item" src="/img/christmas-party-event.svg" alt="christmas hamper donation banner">
-            <img class="item" src="/img/christmas-hamper.svg" alt="christmas hamper donation banner">
-            <img class="item" src="/img/workshop.svg" alt="regular charity event banner">
-            <img class="item" src="/img/events.svg" alt="promotional event banner">
+          <div class="gallery">
+
+            <div id="gallery-item_1" class="thumbnail-item">
+              <a href="#light-box-item_1">
+                <img src="/img/christmas-party-event.svg" alt="christmas hamper donation banner">
+                <h3 class="thumbnail__desc">Upcoming Christmas Party 2021</h3>
+                <p class="thumbnail__editorial">Click for more details...</p>
+              </a>
+            </div>
+
+            <div id="gallery-item_2" class="thumbnail-item">
+              <a href="#light-box-item_2">
+                <img src="/img/christmas-hamper.svg" alt="christmas hamper donation banner">
+                <h3 class="thumbnail__desc">Christmas Fundraising Event 2021</h3>
+                <p class="thumbnail__editorial">Click for more details...</p>
+              </a>
+            </div>
+
+            <div id="gallery-item_2" class="thumbnail-item">
+              <a href="#light-box-item_3">
+                <img src="/img/events.svg" alt="promotional event banner">
+                <h3 class="thumbnail__desc">Various Freely Available Support Group's</h3>
+                <p class="thumbnail__editorial">Click for more details...</p>
+              </a>
+            </div>
+
+          </div>
+          <!-- Events images Light boxes  -->
+          <div class="events-lightboxes">
+
+            <!-- Christmas Party Light box  -->
+            <div id="light-box-item_1" class="events-lightbox">
+              <div class="events-lightbox__content">
+                <a href="#gallery-item_1" class="close"> <svg class="close-icon" viewBox="2 2 20 20">
+                    <path fill="#8c3921" viewbox="0 0 20 20"
+                      d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+                  </svg> </a>
+                <div class="item"><a href=""><img src="/img/christmas-party-event.svg"
+                      alt="christmas hamper donation banner"></a></div>
+                <h3 class="events-lightbox__title">Upcoming Christmas Party 2021</h3>
+              </div>
+            </div>
+            <!-- Christmas Hamper Light box  -->
+            <div id="light-box-item_2" class="events-lightbox">
+              <div class="events-lightbox__content">
+                <a href="#gallery-item_2" class="close"> <svg class="close-icon"  viewBox="2 2 20 20">
+                    <path fill="#8c3921" viewbox="0 0 20 20"
+                      d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+                  </svg> </a>
+                <div class="item"><a href=""><img src="/img/christmas-hamper.svg"
+                      alt="christmas hamper donation banner"></a></div>
+                <h3 class="events-lightbox__title">Christmas Hamper Fundraiser</h3>
+              </div>
+            </div>
+            <!-- Better Future Light box  -->
+            <div id="light-box-item_3" class="events-lightbox">
+              <div class="events-lightbox__content">
+                <a href="#gallery-item_3" class="close"> <svg class="close-icon" viewBox="2 2 20 20">
+                    <path fill="#8c3921" viewbox="0 0 20 20"
+                      d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+                  </svg> </a>
+                <div class="item"><a href=""><img src="/img/events.svg" alt="promotional event banner"></a></div>
+                <h3 class="events-lightbox__title">Support Group Events</h3>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

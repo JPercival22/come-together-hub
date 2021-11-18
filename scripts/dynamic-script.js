@@ -1,5 +1,4 @@
 //   Modal toggle and background blur on click
-
 var modal = document.querySelector('.modal');
 var blur = document.getElementById('blur');
 
