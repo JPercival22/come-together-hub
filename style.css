@@ -94,7 +94,6 @@ header nav #click {
 }
 
 .modal.active {
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,6 +107,7 @@ header nav #click {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: fixed;
   pointer-events: all;
   z-index: 2000;
   padding: 15px;
@@ -158,16 +158,16 @@ header nav #click {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .modal.active ul li {
@@ -303,10 +303,12 @@ header nav #click {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background: #fff8bd;
@@ -321,16 +323,16 @@ header nav #click {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .nav-container header nav ul li a {
@@ -348,12 +350,16 @@ header nav #click {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 165px;
   height: 40px;
   font-weight: 700;
@@ -545,10 +551,10 @@ header #click:checked ~ ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1563,9 +1569,8 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .make-a-donation-section .container {
     padding: 0.9em;
   }
-  .editorial-card .card-grid_start .inner img {
-    max-width: 465px;
-    max-height: 465px;
+  .events-lightbox .events-lightbox__content {
+    width: 50%;
   }
   .contact-page-section {
     padding: 4em;
@@ -1634,6 +1639,10 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .editorial-card {
     padding: 0 6.5em;
   }
+  .events-lightbox .events-lightbox__content {
+    width: 40%;
+    height: 90%;
+  }
   .contact-page-section {
     padding: 2em;
   }
@@ -1677,6 +1686,10 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   }
   .editorial-card {
     margin: 0 6.5em;
+  }
+  .events-lightbox .events-lightbox__content {
+    width: 35%;
+    height: 96%;
   }
   .contact-page-section {
     padding: 0;
@@ -1723,7 +1736,7 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   }
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 1879px) {
   .nav-container header .logo {
     padding-left: 13em;
   }
@@ -1736,82 +1749,11 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
   .research-qoute {
     padding: 1em 11em 4em 11em;
   }
-  .featured {
-    padding: 7em;
+  .events-lightbox .events-lightbox__content {
+    width: 28%;
+    height: 96%;
   }
-  .featured::before {
-    left: 10em;
-    top: 3em;
-  }
-  .featured .right img {
-    width: 50%;
-  }
-  .skills,
-  .portfolio {
-    padding: 13em;
-  }
-  .about {
-    padding: 14em;
-  }
-  .portfolio {
-    padding: 15em;
-  }
-  .portfolio .portfolio-container {
-    margin: 2em 0;
-    grid-gap: 5em;
-  }
-  .portfolio .portfolio-container .portfolio-left {
-    margin: 0;
-  }
-  .portfolio .portfolio-container .portfolio-left .inner .subtitle {
-    margin-top: 0;
-  }
-  .portfolio .portfolio-container .right img {
-    height: 27vh;
-    width: 20vw;
-    margin-top: 0;
-  }
-  .hero-container.remind-me-project {
-    height: 92vh;
-  }
-  .hero-container.remind-me-project .is-centered {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .hero-container.remind-me-project .is-centered .hero-text-content {
-    padding: 14em;
-  }
-  .hero-container.remind-me-project .is-centered .hero-text-content .hero-title-case-study .hero-title {
-    font-weight: 900;
-  }
-  .hero-container.remind-me-project .is-centered .hero-text-content .hero-title-case-study .hero-subtitle {
-    font-size: 32px;
-    font-weight: 900;
-    background-color: #f0f8ff33;
-  }
-  .hero-container.guitar-project .is-centered .hero-text-content {
-    margin-left: 10em;
-  }
-  .contact-page-section {
-    padding: 3em;
-  }
-  .contact-page-section .contact-container {
-    margin: 0;
-  }
-  .contact-page-section .contact-container .contact-form {
-    width: 30vw;
-  }
-  .contact-page-section .contact-container .contact-form .contact-form-container .left {
-    width: 30vw;
-  }
-  .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area .submit-button {
-    width: 12vw;
-  }
-  .contact-page-section .show-modal {
+  .show-modal {
     top: 38%;
     left: 36.5%;
     width: 25vw;
@@ -1827,7 +1769,7 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
     -webkit-transition: 3s ease-in-out;
     transition: 3s ease-in-out;
   }
-  .contact-page-section .show-modal ul {
+  .show-modal ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1837,10 +1779,10 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
             flex-direction: row;
     grid-gap: 3em;
   }
-  .contact-page-section .show-modal ul li {
+  .show-modal ul li {
     padding: 2em;
   }
-  .contact-page-section .show-modal .close-modal .close-icon {
+  .show-modal .close-modal .close-icon {
     position: relative;
     top: -37px;
     left: 460px;
