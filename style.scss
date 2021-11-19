@@ -47,7 +47,7 @@ $gradients: map-merge(
 }
 
 // format mixins
-// col 
+// col
 @mixin align-left__column {
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ $gradients: map-merge(
   justify-content: flex-end;
 }
 
-// row 
+// row
 @mixin align-left__row {
   display: flex;
   flex-direction: row;
@@ -397,7 +397,7 @@ header #click:checked ~ ul li a {
   background-size: cover;
   width: 100vw;
   height: 30vh;
-  filter: hue-rotate(338deg);
+  // filter: hue-rotate(338deg);
   .hero-donation {
     display: none;
   }
@@ -410,15 +410,16 @@ header #click:checked ~ ul li a {
 }
 
 .research-qoute {
-  display: flex;
+  @include align-center__row;
   .qoute-text {
-    display: flex;
-    flex-direction: column;
-    font-style: italic;
+    p {
+      font-size: 22px;
+    }
     .signature {
       display: flex;
       justify-content: flex-end;
       font-style: normal;
+      font-size: 22px;
     }
   }
 }
@@ -443,21 +444,6 @@ header #click:checked ~ ul li a {
         font-weight: 500;
         font-variant-caps: all-petite-caps;
         letter-spacing: 0.3rem;
-      }
-      .multi-editorial-banners {
-        @include align-center__column;
-        flex-wrap: wrap;
-        .item {
-          margin-bottom: 2%;
-          max-height: 400px;
-          max-width: 280px;
-          height: 100%;
-          width: auto;
-        }
-        img {
-          border: none;
-          border-radius: 5px;
-        }
       }
       .editorial-desc {
         display: flex;
@@ -511,7 +497,7 @@ header #click:checked ~ ul li a {
 .editorial-card .card-grid_start .inner .gallery {
   @include align-center__column;
   grid-gap: 2em;
-  // background: #ccc;
+  width: 92vw;
   .thumbnail-item {
     border: $button-border-settings;
     border-radius: 5px;
@@ -657,7 +643,7 @@ header #click:checked ~ ul li a {
   .input-area
   label
   .text-field::placeholder {
-  color: #3d3d3d;
+  color: #3d3d3d81;
   font-size: 16px;
   height: 500px;
   font-weight: 300;
@@ -709,8 +695,7 @@ header #click:checked ~ ul li a {
       border-radius: 8px;
       background-color: $core-neutral;
       padding: 10px;
-      @include
-      align-center__column;
+      @include align-center__column;
       max-width: 280px;
       width: 100%;
       h1 {
@@ -869,7 +854,8 @@ footer {
   }
 
   .events-lightbox .events-lightbox__content {
-    width: 93%;
+    max-width: 390px;
+    width: 100%;
   }
 
   .thank-you-section .thank-you-container .thank-you-message {
@@ -902,15 +888,8 @@ footer {
     padding: 1.6em;
   }
 
-  .editorial-card .card-grid_start .inner .gallery {
-    max-width: 460px;
-    width: 100%;
-  }
-
-  .events-lightbox .events-lightbox__content .item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .events-lightbox .events-lightbox__content {
+    max-width: 480px;
   }
 
   /*contact form styles*/
@@ -927,7 +906,7 @@ footer {
 // Styles for tablets and small laptops
 @media only screen and (min-width: 895px) {
   .hero-container {
-    height: 70vh;
+    height: 100vh;
   }
 
   .make-a-donation-section .primary-button {
@@ -968,101 +947,18 @@ footer {
   }
 
   .editorial-card .card-grid_start .inner .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    @include align-center__row;
     grid-gap: 1em;
-    max-width: 730px;
-    width: 100%;
-    margin: 2em;
-    .thumbnail-item {
-      border: $button-border-settings;
-      border-radius: 5px;
-      background: $core-neutral;
-      .thumbnail__desc {
-        color: $primary-core;
-        font-size: 22px;
-        padding: 1em;
-        padding-bottom: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      .thumbnail__editorial {
-        color: #000;
-        font-size: 16px;
-        padding: 1em;
-        padding-bottom: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      img {
-        width: 100%;
-        height: auto;
-        border-bottom: $button-border-settings;
-        border-radius: 5px 5px 0 0;
-        transition: all 0.5s ease-in-out;
-        &:hover {
-          opacity: 0.5;
-        }
-      }
-      &:hover {
-        text-decoration: underline;
-        color: $core-dark;
-      }
-      &:hover {
-        filter: brightness(69%);
-      }
+  }
+  .events-lightbox .events-lightbox__content {
+    max-width: 450px;
+    .item {
+      width: 700px;
+    }
+    img {
+      margin: 0;
     }
   }
-  // light box styles
-  .events-lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    color: $core-neutral;
-    font-weight: 500;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .events-lightbox__content {
-      position: relative;
-      width: 75%;
-      height: 95%;
-      background: black;
-      padding: 2em;
-      .events-lightbox__title {
-        font-weight: 500;
-      }
-      .close {
-        position: absolute;
-        width: 2em;
-        height: 2em;
-        background: $core-neutral;
-        top: -1em;
-        right: -1em;
-        border-radius: 50%;
-        .close-icon {
-          display: flex;
-          align-self: center;
-          justify-self: center;
-        }
-      }
-      .item {
-        img {
-          width: 100%;
-          margin: 0 auto;
-        }
-      }
-    }
-  }
-
-  .events-lightbox:target {
-    display: flex;
-  }
-
   // contact section styles
   .show-modal {
     top: 34%;
@@ -1190,17 +1086,12 @@ footer {
   }
 
   .events-lightbox .events-lightbox__content {
-    width: 50%;
+    max-width: 504px;
+    height: 765px;
+    .item {
+      width: 790px;
+    }
   }
-  // .editorial-card .card-grid_start .inner img {
-  //   max-width: 465px;
-  //   max-height: 465px;
-  // }
-
-  // .editorial-card .card-grid_start .inner .gallery {
-  //   max-width: 920px;
-  //   justify-content: center;
-  // }
 
   // contact section styles
   .contact-page-section {
@@ -1267,9 +1158,24 @@ footer {
     padding: 0 6.5em;
   }
 
-  .events-lightbox .events-lightbox__content {
-    width: 40%;
-    height: 90%;
+  .editorial-card .card-grid_start .inner .gallery {
+    grid-gap: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 250px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 91%;
+    .thumbnail-item {
+      border: $button-border-settings;
+      border-radius: 5px;
+      background: $core-neutral;
+      width: calc(910px / 3);
+      img {
+        padding: 5px;
+      }
+    }
   }
   // contact-page styles
 
@@ -1326,7 +1232,11 @@ footer {
   }
 
   .editorial-card {
-    margin: 0 6.5em;
+    margin: 0 14em;
+  }
+
+  .editorial-card .card-grid_start .inner .gallery {
+    max-width: 70%;
   }
 
   .events-lightbox .events-lightbox__content {
@@ -1384,24 +1294,25 @@ footer {
       }
     }
   }
-
 }
 
 @media only screen and (min-width: 1879px) {
-  .nav-container header .logo {
-    padding-left: 13em;
-  }
-
-  // index
-  .hero-container {
-    height: 95vh;
-    .hero-text-content {
-      padding: 14em 6em 0em 14em;
+  .nav-container header {
+    .logo {
+      padding-left: 19em;
+    }
+    nav ul {
+      margin-right: 17em;
+      padding-right: 5em;
     }
   }
 
-  .research-qoute {
-    padding: 1em 11em 4em 11em;
+  // index
+  .hero-container .hero-donation {
+    margin-left: 7em;
+  }
+  .editorial-card .card-grid_start .inner img {
+    width: 60%;
   }
 
   .events-lightbox .events-lightbox__content {
@@ -1439,6 +1350,7 @@ footer {
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .text-field {
     width: 25vw;
     height: auto;
+    // padding: 1em;
   }
 
   section {
