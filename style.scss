@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Raleway:wght@400;500&display=swap");
+
 // color variables
 $core-neutral: #fff;
 $core-dark: #8c3921;
@@ -43,6 +44,51 @@ $gradients: map-merge(
 // gradient class
 @each $gradient, $value in $gradients {
   @include bg-gradient(".bg-gradient-#{$gradient}", $value);
+}
+
+// format mixins
+// col 
+@mixin align-left__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin align-center__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+// row 
+@mixin align-left__row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin align-center__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-right {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 html,
@@ -123,11 +169,8 @@ header nav #click {
 }
 
 .modal.active {
+  @include align-left__column;
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
   pointer-events: all;
   z-index: 2000;
   padding: 15px;
@@ -166,16 +209,10 @@ header nav #click {
   }
   ul {
     list-style: none;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+    @include align-left__column;
     li {
       padding: 10px 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+      @include align-center__row;
       cursor: pointer;
       .modal-icon {
         width: 30px;
@@ -257,10 +294,7 @@ header nav #click {
   left: -100%;
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  @include align-center__column;
   transition: $button-hover-state;
   background: $secondary-core;
   text-transform: uppercase;
@@ -269,10 +303,7 @@ header nav #click {
     width: 100%;
     margin: 25px 0;
     font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include align-center__column;
     a {
       color: $core-dark;
       width: 100%;
@@ -284,9 +315,7 @@ header nav #click {
     }
   }
   button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include align-center__column;
     width: 165px;
     height: 40px;
     font-weight: 700;
@@ -334,10 +363,7 @@ header #click:checked ~ ul li a {
   border-radius: 2px;
   background: $core-neutral;
   .primary-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include align-center__column;
     height: 40px;
     width: 100%;
     padding: 20px 100px;
@@ -419,10 +445,7 @@ header #click:checked ~ ul li a {
         letter-spacing: 0.3rem;
       }
       .multi-editorial-banners {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        @include align-center__column;
         flex-wrap: wrap;
         .item {
           margin-bottom: 2%;
@@ -486,10 +509,7 @@ header #click:checked ~ ul li a {
   box-sizing: border-box;
 }
 .editorial-card .card-grid_start .inner .gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include align-center__column;
   grid-gap: 2em;
   // background: #ccc;
   .thumbnail-item {
@@ -578,10 +598,7 @@ header #click:checked ~ ul li a {
 .contact-page-section {
   margin-bottom: 30px;
   .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include align-center__column;
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -692,10 +709,8 @@ header #click:checked ~ ul li a {
       border-radius: 8px;
       background-color: $core-neutral;
       padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      @include
+      align-center__column;
       max-width: 280px;
       width: 100%;
       h1 {
@@ -818,10 +833,7 @@ footer {
 
 .footer-container .footer-social-icon,
 .footer-container small {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  @include align-center__row;
   border-top: 1px solid $core-dark;
   border-bottom: 1px solid gainsboro;
   a {
@@ -1070,10 +1082,7 @@ footer {
   .contact-page-section .contact-container .contact-form .contact-form-container {
     border-top: 1px solid $core-dark;
     .left .w100 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      @include align-center__column;
       .submit-button {
         width: 20vw;
         margin-top: 2em;
@@ -1180,10 +1189,19 @@ footer {
     padding: 0.9em;
   }
 
-  .editorial-card .card-grid_start .inner img {
-    max-width: 465px;
-    max-height: 465px;
+  .events-lightbox .events-lightbox__content {
+    width: 50%;
   }
+  // .editorial-card .card-grid_start .inner img {
+  //   max-width: 465px;
+  //   max-height: 465px;
+  // }
+
+  // .editorial-card .card-grid_start .inner .gallery {
+  //   max-width: 920px;
+  //   justify-content: center;
+  // }
+
   // contact section styles
   .contact-page-section {
     padding: 4em;
@@ -1223,7 +1241,6 @@ footer {
   }
   // index hero
   .hero-container {
-    
     width: auto;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -1250,6 +1267,10 @@ footer {
     padding: 0 6.5em;
   }
 
+  .events-lightbox .events-lightbox__content {
+    width: 40%;
+    height: 90%;
+  }
   // contact-page styles
 
   .contact-page-section {
@@ -1307,6 +1328,11 @@ footer {
   .editorial-card {
     margin: 0 6.5em;
   }
+
+  .events-lightbox .events-lightbox__content {
+    width: 35%;
+    height: 96%;
+  }
   // contact page styles
 
   .contact-page-section {
@@ -1358,9 +1384,10 @@ footer {
       }
     }
   }
+
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 1879px) {
   .nav-container header .logo {
     padding-left: 13em;
   }
@@ -1377,105 +1404,32 @@ footer {
     padding: 1em 11em 4em 11em;
   }
 
-  .featured {
-    padding: 7em;
-    &::before {
-      left: 10em;
-      top: 3em;
-    }
-    .right img {
-      width: 50%;
-    }
+  .events-lightbox .events-lightbox__content {
+    width: 28%;
+    height: 96%;
   }
 
-  .skills,
-  .portfolio {
-    padding: 13em;
-  }
-  .about {
-    padding: 14em;
-  }
-
-  .portfolio {
-    padding: 15em;
-    .portfolio-container {
-      margin: 2em 0;
-      grid-gap: 5em;
-      .portfolio-left {
-        margin: 0;
-        .inner .subtitle {
-          margin-top: 0;
-        }
-      }
-      .right img {
-        height: 27vh;
-        width: 20vw;
-        margin-top: 0;
+  .show-modal {
+    top: 38%;
+    left: 36.5%;
+    width: 25vw;
+    height: auto;
+    box-shadow: $box-shadow-standard;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 3s ease-in-out;
+    ul {
+      display: flex;
+      flex-direction: row;
+      grid-gap: 3em;
+      li {
+        padding: 2em;
       }
     }
-  }
-
-  .hero-container.remind-me-project {
-    height: 92vh;
-    .is-centered {
-      justify-content: flex-start;
-      align-items: center;
-      .hero-text-content {
-        padding: 14em;
-        .hero-title-case-study {
-          .hero-title {
-            font-weight: 900;
-          }
-          .hero-subtitle {
-            font-size: 32px;
-            font-weight: 900;
-            background-color: #f0f8ff33;
-          }
-        }
-      }
-    }
-  }
-
-  .hero-container.guitar-project .is-centered .hero-text-content {
-    margin-left: 10em;
-  }
-
-  .contact-page-section {
-    padding: 3em;
-    .contact-container {
-      margin: 0;
-      .contact-form {
-        width: 30vw;
-        .contact-form-container .left {
-          width: 30vw;
-          .input-area .submit-button {
-            width: 12vw;
-          }
-        }
-      }
-    }
-    .show-modal {
-      top: 38%;
-      left: 36.5%;
-      width: 25vw;
-      height: auto;
-      box-shadow: $box-shadow-standard;
-      justify-content: flex-start;
-      align-items: flex-start;
-      transition: 3s ease-in-out;
-      ul {
-        display: flex;
-        flex-direction: row;
-        grid-gap: 3em;
-        li {
-          padding: 2em;
-        }
-      }
-      .close-modal .close-icon {
-        position: relative;
-        top: -37px;
-        left: 460px;
-      }
+    .close-modal .close-icon {
+      position: relative;
+      top: -37px;
+      left: 460px;
     }
   }
 
