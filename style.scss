@@ -258,17 +258,13 @@ header nav #click {
   background: $brand-color;
   height: 70px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include align-center__column;
   border-bottom: 1px solid #8c39212b;
   header {
     width: 100%;
     height: inherit;
     .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include align-center__column;
       height: 100%;
       .logo-placeholder {
         display: flex;
@@ -594,25 +590,25 @@ header #click:checked ~ ul li a {
         margin-left: 0.5rem;
       }
       .contact-form-container {
+        @include align-center__column;
         border-top: $button-border-settings;
         border-radius: 0;
+        background-color: #fff8bd30;
         .left {
-          background: #b5d9545c;
+          @include align-center__column;
           padding-top: 0.5em;
           border-radius: 5px;
         }
         .input-area {
           padding: 0.5em;
           .submit-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include align-center__column;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: $core-dark;
             font-family: "Poppins";
             font-size: 16px;
-            background-color: $brand-color;
+            background-color: #46db4633;
             cursor: pointer;
             width: 100%;
             height: 36px;
@@ -629,6 +625,41 @@ header #click:checked ~ ul li a {
           }
           span {
             display: flex;
+          }
+        }
+        .right {
+          @include align-center__column;
+          .contact-form__logo-container {
+            @include align-center__column;
+            border-left: none;
+            border-bottom: none;
+            border-right: none;
+            border-top: $button-border-settings;
+            border-radius: 0;
+            width: 100%;
+            .logo-container {
+              @include align-center__column;
+              border-radius: 5px;
+              padding: 2em;
+              background: #f1e7e4;
+              img {
+                border: none;
+                width: 350px;
+                height: auto;
+              }
+              .logo-title {
+                font-size: 18px;
+                line-height: 0;
+                letter-spacing: 1.1pt;
+                text-transform: uppercase;
+                color: $core-dark;
+              }
+              .logo-subtitle {
+                font-size: 12px;
+                line-height: 40px;
+                color: $core-dark;
+              }
+            }
           }
         }
       }
@@ -1104,6 +1135,67 @@ footer {
     }
   }
 
+  .contact-page-section .contact-container .contact-form {
+    .form-title {
+      margin-left: 3em;
+    }
+
+    .contact-form-container {
+      @include align-center__row;
+      .left {
+        @include align-center__column;
+        background: #fff8bd30;
+        width: 50%;
+        form {
+          padding-top: 1em;
+        }
+        .input-area .submit-button {
+          background-color: #46db4633;
+          transition: all 1s ease-in-out;
+          &:hover {
+            background-color: whitesmoke;
+          }
+        }
+      }
+    }
+    .right {
+      @include align-center__column;
+      width: 50%;
+      .contact-form__logo-container {
+        @include align-center__column;
+        border-left: 1px solid $core-dark !important;
+        border-bottom: none!important;
+        border-right: none!important;
+        border-top: none!important;
+        border-radius: 0;
+        width: 100%;
+        .logo-container {
+          @include align-center__column;
+          border-radius: 5px;
+          padding: 5em !important;
+          background: #f1e7e4;
+          img {
+            border: none;
+            width: 400px;
+            height: auto;
+          }
+          .logo-title {
+            font-size: 25px;
+            line-height: 0;
+            letter-spacing: 1.1pt;
+            text-transform: uppercase;
+            color: $core-dark;
+          }
+          .logo-subtitle {
+            font-size: 16px;
+            line-height: 50px;
+            color: $core-dark;
+          }
+        }
+      }
+    }
+  }
+
   // thank you page styles
   .thank-you-section {
     padding: 0.5em;
@@ -1179,19 +1271,6 @@ footer {
   }
   // contact-page styles
 
-  .contact-page-section {
-    padding: 2em;
-    .contact-container .contact-form .contact-form-container .left .input-area .submit-button {
-      width: 15vw;
-    }
-    .show-modal {
-      top: 40%;
-      left: 35%;
-      width: 30vw;
-      height: auto;
-    }
-  }
-
   // Thank you page
 
   .thank-you-section .thank-you-container .thank-you-message {
@@ -1243,21 +1322,13 @@ footer {
     width: 35%;
     height: 96%;
   }
-  // contact page styles
 
-  .contact-page-section {
-    padding: 0;
-    .contact-container {
-      margin: 4em;
-    }
-    .show-modal {
-      width: 25vw;
-      .close-modal .close-icon {
-        position: relative;
-        top: -34px;
-        left: 186px;
-      }
-    }
+  .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .first-child,
+  .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .second-child,
+  .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .third-child,
+  .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .text-field {
+    width: 26vw;
+    height: auto;
   }
 
   footer .footer-container {
@@ -1348,9 +1419,68 @@ footer {
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .second-child,
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .third-child,
   .contact-page-section .contact-container .contact-form .contact-form-container .left .input-area label .text-field {
-    width: 25vw;
+    width: 22vw;
     height: auto;
-    // padding: 1em;
+    margin: 8px 40px;
+  }
+  .contact-page-section .contact-container .contact-form {
+    .form-title {
+      margin-left: 3em;
+    }
+
+    .contact-form-container {
+      display: flex;
+      .left {
+        @include align-center__column;
+        background: #fff8bd30;
+        form {
+          padding-top: 1em;
+        }
+        .input-area .submit-button {
+          background-color: #46db4633;
+          transition: all 1s ease-in-out;
+          &:hover {
+            background-color: whitesmoke;
+          }
+        }
+      }
+    }
+    .right {
+      @include align-center__column;
+      width: 100%;
+      .contact-form__logo-container {
+        @include align-center__column;
+        border-left: 1px solid $core-dark;
+        border-bottom: none;
+        border-right: none;
+        border-top: none;
+        border-radius: 0;
+        width: 100%;
+        .logo-container {
+          @include align-center__column;
+          border-radius: 5px;
+          padding: 5em;
+          background: #f1e7e4;
+          img {
+            border: none;
+            width: 400px;
+            height: auto;
+          }
+          .logo-title {
+            font-size: 28px;
+            line-height: 0;
+            letter-spacing: 1.1pt;
+            text-transform: uppercase;
+            color: $core-dark;
+          }
+          .logo-subtitle {
+            font-size: 18px;
+            line-height: 50px;
+            color: $core-dark;
+          }
+        }
+      }
+    }
   }
 
   section {
