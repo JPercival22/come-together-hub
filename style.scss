@@ -173,15 +173,16 @@ header nav #click {
   position: fixed;
   pointer-events: all;
   z-index: 2000;
-  padding: 15px;
+  padding: 1em;
   box-shadow: $box-shadow-standard;
   background: #fff;
   border: 1px solid black;
   border-radius: 5px;
-  top: 30%;
-  left: 4%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 310px;
-  height: 280px;
+  height: 322px;
   transition: all 0.5s ease-in-out;
   .contact-modal-title {
     color: $core-dark;
@@ -191,11 +192,10 @@ header nav #click {
     font-weight: 500;
     font-variant-caps: all-petite-caps;
   }
-
   .close-modal {
     position: relative;
-    top: -13%;
-    left: 94%;
+    top: -21%;
+    left: 92%;
     .close-icon {
       cursor: pointer;
       position: absolute;
@@ -255,7 +255,7 @@ header nav #click {
 }
 
 .nav-container {
-  background: $brand-color;
+  background: transparent;
   height: 70px;
   width: 100%;
   @include align-center__column;
@@ -263,6 +263,7 @@ header nav #click {
   header {
     width: 100%;
     height: inherit;
+    background-color: transparent;
     .logo {
       @include align-center__column;
       height: 100%;
@@ -463,11 +464,9 @@ header #click:checked ~ ul li a {
         span.tertiary-link {
           color: $core-dark;
           font-weight: 600;
-          max-width: calc(6 * 18px);
-          width: 100%;
-          text-decoration: underline;
+          display: contents;
           &:hover {
-            text-decoration: none;
+            text-decoration: underline;
           }
         }
         span.signature {
@@ -1053,13 +1052,11 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background: $secondary-core;
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 60px;
-      background: $brand-color;
       .logo {
         padding-left: 2.5em;
         .logo-placeholder {
@@ -1075,18 +1072,22 @@ footer {
         }
       }
       nav {
+        @include align-center__row;
+        justify-content: flex-end;
+        margin: 0 4em;
         max-height: 60px;
         height: 100%;
         ul {
           position: revert;
-          flex-direction: row;
+          @include align-center__row;
           background: transparent;
           height: 60px;
           li {
+            @include align-center__row;
+            justify-content: flex-end;
             font-size: 14px;
-            align-items: self-end;
-            justify-content: space-evenly;
             a {
+              @include align-center__row;
               width: 145px;
               padding: 0 10px;
               transition: 1s all;
@@ -1095,7 +1096,19 @@ footer {
               }
             }
             .primary-button {
-              display: none;
+              @include align-center__row;
+              justify-content: flex-end;
+              width: 150px;
+              background-color: $brand-color;
+              a {
+                @include align-center__row;
+                width: 145px;
+                padding: 0 10px;
+                transition: 1s all;
+                &:hover {
+                  color: #ad0021;
+                }
+              }
             }
           }
         }
@@ -1164,9 +1177,9 @@ footer {
       .contact-form__logo-container {
         @include align-center__column;
         border-left: 1px solid $core-dark !important;
-        border-bottom: none!important;
-        border-right: none!important;
-        border-top: none!important;
+        border-bottom: none !important;
+        border-right: none !important;
+        border-top: none !important;
         border-radius: 0;
         width: 100%;
         .logo-container {
@@ -1211,6 +1224,17 @@ footer {
 }
 
 @media only screen and (min-width: 1250px) {
+  .modal.active {
+    width: 390px;
+    height: auto;
+  }
+
+  .modal.active .close-modal {
+    position: relative;
+    top: -35px;
+    left: 93%;
+  }
+
   .nav-container header {
     .logo {
       padding-left: 7.5em;
@@ -1250,22 +1274,27 @@ footer {
     padding: 0 6.5em;
   }
 
-  .editorial-card .card-grid_start .inner .gallery {
-    grid-gap: 1em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 0 0 250px;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 91%;
-    .thumbnail-item {
-      border: $button-border-settings;
-      border-radius: 5px;
-      background: $core-neutral;
-      width: calc(910px / 3);
-      img {
-        padding: 5px;
+  .editorial-card .card-grid_start .inner {
+    .sm-image {
+      width: 40%;
+    }
+    .gallery {
+      grid-gap: 1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex: 0 0 250px;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 91%;
+      .thumbnail-item {
+        border: $button-border-settings;
+        border-radius: 5px;
+        background: $core-neutral;
+        width: calc(910px / 3);
+        img {
+          padding: 5px;
+        }
       }
     }
   }
@@ -1311,7 +1340,8 @@ footer {
   }
 
   .editorial-card {
-    margin: 0 14em;
+    margin: 0 12.5em;
+    padding: 0;
   }
 
   .editorial-card .card-grid_start .inner .gallery {
