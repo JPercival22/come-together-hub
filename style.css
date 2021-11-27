@@ -312,6 +312,7 @@ header nav #click {
   background: #fff8bd;
   text-transform: uppercase;
   z-index: 1100;
+  text-align: center;
 }
 
 .nav-container header nav ul li {
@@ -382,6 +383,10 @@ header #click:checked ~ ul li a {
   position: relative;
   top: 0;
   left: 50%;
+}
+
+.nav-container header nav ul li:checked {
+  display: none;
 }
 
 .menu-btn svg {
@@ -470,6 +475,7 @@ header #click:checked ~ ul li a {
   background-size: cover;
   width: 100vw;
   height: 30vh;
+  background-position: fixed;
 }
 
 .hero-container .hero-donation {
@@ -1787,7 +1793,9 @@ footer .footer-container .footer-details .logo-container .mailto-link:hover {
         -ms-flex-align: center;
             align-items: center;
     background-size: cover;
-    height: 100vh;
+    height: 70vh;
+    background-attachment: fixed;
+    background-position-y: center;
   }
   .hero-container .hero-donation {
     display: -ms-grid;

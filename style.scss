@@ -274,6 +274,7 @@ header nav #click {
   background: $secondary-core;
   text-transform: uppercase;
   z-index: 1100;
+    text-align: center;
   li {
     width: 100%;
     margin: 25px 0;
@@ -314,6 +315,9 @@ header #click:checked ~ ul li a {
   position: relative;
   top: 0;
   left: 50%;
+}
+.nav-container header nav ul li:checked {
+  display: none;
 }
 
 .menu-btn {
@@ -375,6 +379,7 @@ header #click:checked ~ ul li a {
   background-size: cover;
   width: 100vw;
   height: 30vh;
+  background-position: fixed;
   .hero-donation {
     display: none;
   }
@@ -1225,7 +1230,9 @@ footer {
     justify-content: start;
     align-items: center;
     background-size: cover;
-    height: 100vh;
+    height: 70vh;
+    background-attachment: fixed;
+    background-position-y: center;
     .hero-donation {
       display: grid;
       margin-left: 4em;
