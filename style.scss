@@ -67,6 +67,12 @@ $box-shadow-standard: 11px 12px 9px -7px rgba(174, 174, 174, 0.39);
   justify-content: flex-end;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   max-width: 100%;
@@ -134,10 +140,6 @@ img {
 .failure {
   color: $fail;
   text-decoration: underline;
-}
-
-header nav #click {
-  display: none;
 }
 
 .modal {
@@ -230,6 +232,10 @@ header nav #click {
   user-select: none;
 }
 
+// header nav #click {
+//   display: none;
+// }
+
 .nav-container {
   background: $core-neutral;
   height: 70px;
@@ -260,74 +266,123 @@ header nav #click {
         display: none;
       }
     }
-  }
-}
 
-.nav-container header nav ul {
-  position: absolute;
-  top: 65px;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  @include align-center__column;
-  transition: $button-hover-state;
-  background: $secondary-core;
-  text-transform: uppercase;
-  z-index: 1100;
-  li {
-    width: 100%;
-    margin: 25px 0;
-    font-size: 1.1rem;
-    @include align-center__column;
-    a {
-      color: $core-dark;
+    // .nav-container header nav ul {
+    //   position: absolute;
+    //   top: 65px;
+    //   left: -100%;
+    //   width: 100%;
+    //   height: 100vh;
+    //   @include align-center__column;
+    //   transition: $button-hover-state;
+    //   background: $secondary-core;
+    //   text-transform: uppercase;
+    //   z-index: 1100;
+    //   li {
+    //     width: 100%;
+    //     margin: 25px 0;
+    //     font-size: 1.1rem;
+    //     @include align-center__column;
+    //     a {
+    //       color: $core-dark;
+    //       width: 100%;
+    //       margin-left: -100%;
+    //       &:hover {
+    //         background: 0 0;
+    //         color: #0ff;
+    //       }
+    //     }
+    //   }
+    //   button {
+    //     @include align-center__column;
+    //     width: 165px;
+    //     height: 40px;
+    //     font-weight: 700;
+    //     text-transform: uppercase;
+    //     color: $core-dark;
+    //     background-color: $core-neutral;
+    //     border: $button-border-settings;
+    //     border-radius: 5px;
+    //     transition: $button-hover-state;
+    //     &:hover {
+    //       background: $core-light_hover-state;
+    //     }
+    //   }
+    // }
+
+    // header #click:checked ~ ul {
+    //   left: 0;
+    // }
+
+    // header #click:checked ~ ul li a {
+    //   position: relative;
+    //   top: 0;
+    //   left: 50%;
+    // }
+
+    // new nav
+    nav {
+      position: absolute;
+      text-align: left;
+      top: 100%;
+      left: 0;
+      background: $core-light;
       width: 100%;
-      margin-left: -100%;
-      &:hover {
-        background: 0 0;
-        color: #0ff;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 400ms ease-in-out;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        li {
+          margin-bottom: 1em;
+          margin-left: 1em;
+          a {
+            color: $core-dark;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-toggle-label{
+      svg {
+        width: 35px;
+        height: auto;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        path {
+          fill: $core-dark;
+        }
       }
     }
   }
-  button {
-    @include align-center__column;
-    width: 165px;
-    height: 40px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $core-dark;
-    background-color: $core-neutral;
-    border: $button-border-settings;
-    border-radius: 5px;
-    transition: $button-hover-state;
-    &:hover {
-      background: $core-light_hover-state;
-    }
-  }
 }
 
-header #click:checked ~ ul {
-  left: 0;
+.nav-toggle {
+  display: none;
 }
 
-header #click:checked ~ ul li a {
-  position: relative;
-  top: 0;
-  left: 50%;
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
 }
 
-.menu-btn {
-  svg {
-    width: 35px;
-    height: auto;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-    path {
-      fill: $core-dark;
-    }
-  }
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
 }
+
+
 
 .make-a-donation-section,
 .hero-donation {
@@ -1047,38 +1102,41 @@ footer {
       height: 60px;
       .logo {
         padding-left: 2.5em;
+        flex-direction: row;
         .logo-placeholder {
           padding: 0;
         }
         .logo-container {
+          display: flex;
           flex-direction: column;
           margin-left: 20px;
           .logo-name {
-            line-height: 20px;
+            display: flex;
+            color: #8c3921c7;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 700;
             font-variant-caps: all-petite-caps;
           }
         }
       }
       nav {
+        all: unset;
         @include align-center__row;
-        justify-content: flex-end;
         margin: 0 4em;
-        max-height: 60px;
-        height: 100%;
         ul {
-          position: revert;
           @include align-center__row;
-          background: transparent;
-          height: 60px;
           li {
             @include align-center__row;
             justify-content: flex-end;
-            font-size: 14px;
+            margin: 0;
+            padding: 0;
             a {
+              opacity: 1;
               @include align-center__row;
               width: 145px;
-              padding: 0 10px;
-              transition: 1s all;
+            font-size: 19px;
+              transition: linear 500ms all;
               &:hover {
                 color: #ad0021;
               }
@@ -1104,7 +1162,7 @@ footer {
     }
   }
 
-  .menu-btn svg {
+  .nav-toggle-label svg {
     display: none;
   }
 
