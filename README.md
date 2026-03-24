@@ -1,13 +1,39 @@
-﻿# come-together-hub
+﻿# come-together-hub (Pro-Bono Design & Development)
 
-Aroached by an organisation to update their exiasting website from a shoddy WordePress attempt, it wasnt great. It didnt represent the organisation as a great charity that was helping the most vulnerable, or the homeless and was not responsive.
-  
-  Stage 1
-  Designed using Figma, tested on over 100 users from different backgrounds and abilities and developed using semantic HTML5, SCSS, CSS3, Vanila Javascript and deployed as Version 1. The aim for this release was to see how the company would cope with donations, if there was an actual need for a login page to make regular donations to the charity and if the users would want this feature too.
+Approached by a CIC company to update their existing website from their existing WordPress site. 
 
-  Stage 2
-The designs for the login, donations and payment sections are completed. The code has been preapred for this eventuality and a framework selected which is React once UX Testing is complete.
+The founder states this version doesn't represent the charity professionally, was not responsive on mobile or desktop and an uplift was required to gain access to investment 
+opportunities and improve their community outreach. 
 
-After 12 months it was decided that stage 2 was not needed and stage 1 was deployed and in use presently found at 
+Stage 1 - Discovery
+Inspection - Conducted audits on the existing site, which resulted in deprecated code, substandard HTML structure, Image ratios were not existent, CSS was not cascading and explained responsive issues. WCAG (Accessibility) audits confirmed there was no attempt to make this WordPress site accessible.
 
-www.cometogetherhub.com
+Stage 2 - Market Research
+Market Research on competitor sites was conducted.
+Gained insights into industry standards, user flows and marketing opportunities.
+Governing bodies - UK Charity Laws within this Web industry were extensively researched and complied with during design and development. 
+
+Stage 3  - Design
+Designs were created for mobile, tablet, laptop and wider viewports.
+The theme palette was created from their existing palette. Minimising any user friction and cognitive load during relaunch.
+Images, Font Types and Copy Text were provided by the client.
+Prototypes were agreed on with the founder.
+
+Stage 4
+Implementation - Structured using semantic HTML5, SCSS, CSS, JS(ES6) and MJS
+
+Stage 5 - Testing and Launch
+Responsive Behaviour - Browser tested on Mozilla, Edge, Chrome and Safari.
+Functionality - 5 friends tested for any presentation layer bugs and QA issues (Adhoc).
+Usability Testing - 5 participants, SUS score = 92%
+Accessibility - Audits reported 6 minor issues during 1R. Once rectified, 0 issues were reported.
+Lighthouse Usability  Audit - Performance=100%, SEO=100, Accessibility=100
+
+Stage 5 - Post Launch Testing
+Improved WCAG compliance by up to 60% through targeted audits and inclusive UX recommendations
+Increased conversion performance by 30% through usability testing and heuristic evaluation
+Strengthened platform reliability and SEO performance through optimised front‑end structure
+Provided pro‑bono UX/UI support for Come Together Hub (CIC), achieving a 90% accessibility
+uplift, reducing bounce rates by 70%, and contributing to National Lottery funding.
+
+Site URL : www.cometogetherhub.com
